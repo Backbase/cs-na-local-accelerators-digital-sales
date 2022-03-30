@@ -1,0 +1,25 @@
+<div class="bb-layout bb-layout--vertical-nav" [ngClass]="{
+  'bb-layout--nav-expanded': layoutService.navigationExpanded$ | async,
+  'bb-layout--high-resolution-view': layoutService.isHighResolutionView$ | async
+}">
+  <bb-cm-header-topbar>
+    <bb-logo-ui positionLeft type="emblem" data-role="icon" data-testid="company-logo"></bb-logo-ui>
+
+    <bb-user-context-menu-widget 
+      *ngIf="withUserContext && (isUserContextCookieSet | async)" 
+      positionRight 
+      [showSingleContext]="false" 
+      [pageSize]="7"
+      [selectContextRedirectPage]="selectContextRedirect">
+    </bb-user-context-menu-widget>
+
+    <bb-ds-logout *ngIf="!withUserContext" positionRight serviceUrl="us-onboarding" (logout)="logout()"></bb-ds-logout>
+
+  </bb-cm-header-topbar>
+
+  <div class="bb-layout__nav-backdrop"></div>
+
+  <bb-ds-main-navigation-container>
+    <router-outlet></router-outlet>
+  </bb-ds-main-navigation-container>
+</div>

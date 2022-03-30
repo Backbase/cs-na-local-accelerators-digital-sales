@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file datatype="plaintext" original="ng2.template" source-language="en-US" target-language="ru-RU">
+    <body>
+      <trans-unit id="uso-nav.select-products.label" datatype="html">
+        <source>Saving account</source>
+        <target>Сберегательный счет</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">apps/retail-onboarding/src/app/configs/ds-layout-container.config.ts</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="uso-nav.select-products.headline" datatype="html">
+        <source>Start saving your money</source>
+        <target>Начните экономить свои деньги</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">apps/retail-onboarding/src/app/configs/ds-layout-container.config.ts</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="uso-nav.anchor-data.label" datatype="html">
+        <source>Personal details</source>
+        <target>Личные данные</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">apps/retail-onboarding/src/app/configs/ds-layout-container.config.ts</context>
+          <context context-type="linenumber">40</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="uso-nav.anchor-data.headline" datatype="html">
+        <source>Nice to meet you</source>
+        <target>Приятно познакомиться</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">apps/retail-onboarding/src/app/configs/ds-layout-container.config.ts</context>
+          <context context-type="linenumber">41</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="uso-nav.otp-verification.label" datatype="html">
+        <source>Account verification</source>
+        <target>Верификация учетной записи</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">apps/retail-onboarding/src/app/configs/ds-layout-container.config.ts</context>
+          <context context-type="linenumber">50</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="uso-nav.otp-verification.headline" datatype="html">
+        <source>Let&apos;s secure your account</source>
+        <target>Давайте защитим вашу учетную запись</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">apps/retail-onboarding/src/app/configs/ds-layout-container.config.ts</context>
+          <context context-type="linenumber">51</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="uso-nav.identity-verification.label" datatype="html">
+        <source>ID protection</source>
+        <target>Подтверждение личности</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">apps/retail-onboarding/src/app/configs/ds-layout-container.config.ts</context>
+          <context context-type="linenumber">60</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="uso-nav.identity-verification.headline" datatype="html">
+        <source>Smile for the camera</source>
+        <target>Улыбнитесь камере</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">apps/retail-onboarding/src/app/configs/ds-layout-container.config.ts</context>
+          <context context-type="linenumber">61</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="uso-nav.address.label" datatype="html">
+        <source>Your address</source>
+        <target>Адрес</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">apps/retail-onboarding/src/app/configs/ds-layout-container.config.ts</context>
+          <context context-type="linenumber">70</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="uso-nav.address.headline" datatype="html">
+        <source>Your address</source>
+        <target>Ваш адрес</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">apps/retail-onboarding/src/app/configs/ds-layout-container.config.ts</context>
+          <context context-type="linenumber">71</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="uso-nav.co-applicant.label" datatype="html">
+        <source>Applicants</source>
+        <target>Заявители</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">apps/retail-onboarding/src/app/configs/ds-layout-container.config.ts</context>
+          <context context-type="linenumber">80</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="uso-nav.co-applicant.headline" datatype="html">
+        <source>Applicants</source>
+        <target>Заявители</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">apps/retail-onboarding/src/app/configs/ds-layout-container.config.ts</context>
+          <context context-type="linenumber">81</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="uso-nav.co-applicant-data.label" datatype="html">
+        <source>Details</source>
+        <target>Данные</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">apps/retail-onboarding/src/app/configs/ds-layout-container.config.ts</context>
+          <context context-type="linenumber">90</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="uso-nav.co-applicant-data.headline" datatype="html">
+        <source>Co-applicant details</source>
+        <target>Данные созаявителя</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">apps/retail-onboarding/src/app/configs/ds-layout-container.config.ts</context>
+          <context context-type="linenumber">91</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="uso-nav.co-applicant-address.label" datatype="html">
+        <source>Address</source>
+        <target>Адрес</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">apps/retail-onboarding/src/app/configs/ds-layout-container.config.ts</context>
+          <context context-type="linenumber">100</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="uso-nav.co-applicant-address.headline" datatype="html">
+        <source>Co-applicant address</source>
+        <target>Адрес созаявителя</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">apps/retail-onboarding/src/app/configs/ds-layout-container.config.ts</context>
+          <context context-type="linenumber">101</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="uso-nav.citizenship.label" datatype="html">
+        <source>Citizenship</source>
+        <target>Гражданство</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">apps/retail-onboarding/src/app/configs/ds-layout-container.config.ts</context>
+          <context context-type="linenumber">112</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="uso-nav.citizenship.headline" datatype="html">
+        <source>Let’s verify your citizenship</source>
+        <target>Давайте подтвердим ваше гражданство</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">apps/retail-onboarding/src/app/configs/ds-layout-container.config.ts</context>
+          <context context-type="linenumber">113</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="uso-nav.ssn.label" datatype="html">
+        <source>Citizenship details</source>
+        <target>Данные о гражданстве</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">apps/retail-onboarding/src/app/configs/ds-layout-container.config.ts</context>
+          <context context-type="linenumber">122</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="uso-nav.ssn.headline" datatype="html">
+        <source>Let’s verify your citizenship</source>
+        <target>Давайте подтвердим ваше гражданство</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">apps/retail-onboarding/src/app/configs/ds-layout-container.config.ts</context>
+          <context context-type="linenumber">123</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="uso-nav.kyc.label" datatype="html">
+        <source>Additional information</source>
+        <target>Дополнительная информация</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">apps/retail-onboarding/src/app/configs/ds-layout-container.config.ts</context>
+          <context context-type="linenumber">134</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="uso-nav.kyc.headline" datatype="html">
+        <source>Your occupation</source>
+        <target>Ваш род занятий</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">apps/retail-onboarding/src/app/configs/ds-layout-container.config.ts</context>
+          <context context-type="linenumber">135</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="uso-nav.credentials.label" datatype="html">
+        <source>Create a password</source>
+        <target>Пароль</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">apps/retail-onboarding/src/app/configs/ds-layout-container.config.ts</context>
+          <context context-type="linenumber">144</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="uso-nav.credentials.headline" datatype="html">
+        <source>Create a password</source>
+        <target>Создайте пароль</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">apps/retail-onboarding/src/app/configs/ds-layout-container.config.ts</context>
+          <context context-type="linenumber">145</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="bb.ds-retail-anchor-journey-ang.firstName" datatype="html">
+        <source>First name</source>
+        <target>Имя</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">apps/retail-onboarding/src/app/configs/ds-retail-anchor-journey.config.ts</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/ds-retail-anchor-journey-ang/src/constants/ds-retail-anchor-journey.constants.ts</context>
+          <context context-type="linenumber">15,14</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="bb.ds-retail-anchor-journey-ang.firstNameRequired" datatype="html">
+        <source>First name is required</source>
+        <target>Укажите имя</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">apps/retail-onboarding/src/app/configs/ds-retail-anchor-journey.config.ts</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="bb.ds-retail-anchor-journey-ang.lastName" datatype="html">
+        <source>Last name</source>
+        <target>Фамилия</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">apps/retail-onboarding/src/app/configs/ds-retail-anchor-journey.config.ts</context>
+          <context context-type="linenumber">35</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/ds-retail-anchor-journey-ang/src/constants/ds-retail-anchor-journey.constants.ts</context>
+          <context context-type="linenumber">26,25</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="bb.ds-retail-anchor-journey-ang.lastNameRequired" datatype="html">
+        <source>Last name is required</source>
+        <target>Укажите фамилию</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">apps/retail-onboarding/src/app/configs/ds-retail-anchor-journey.config.ts</context>
+          <context context-type="linenumber">41</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="bb.ds-retail-anchor-journey-ang.dob" datatype="html">
+        <source>Date of birth</source>
+        <target>Дата рождения</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">apps/retail-onboarding/src/app/configs/ds-retail-anchor-journey.config.ts</context>
+          <context context-type="linenumber">51</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/ds-retail-anchor-journey-ang/src/constants/ds-retail-anchor-journey.constants.ts</context>
+          <context context-type="linenumber">37,36</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="bb.ds-retail-anchor-journey-ang.dobRequired" datatype="html">
+        <source>Date of birth is required</source>
+        <target>Укажите дату рождения</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">apps/retail-onboarding/src/app/configs/ds-retail-anchor-journey.config.ts</context>
+          <context context-type="linenumber">59</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="bb.ds-retail-anchor-journey-ang.dobDateGreaterThanMaxDate" datatype="html">
+        <source>You must be between 18 and 99 to open an account</source>
+        <target>Для открытия счета вам должно быть от 18 до 99 лет</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">apps/retail-onboarding/src/app/configs/ds-retail-anchor-journey.config.ts</context>
+          <context context-type="linenumber">60</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="bb.ds-retail-anchor-journey-ang.dobDateLessThanMinDate" datatype="html">
+        <source>You must be between 18 and 99 to open an account</source>
+        <target>Для открытия счета вам должно быть от 18 до 99 лет</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">apps/retail-onboarding/src/app/configs/ds-retail-anchor-journey.config.ts</context>
+          <context context-type="linenumber">61</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="bb.ds-retail-anchor-journey-ang.dobInvalidDateFormat" datatype="html">
+        <source>Date of birth is not a valid date</source>
+        <target>Некорректная дата рождения</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">apps/retail-onboarding/src/app/configs/ds-retail-anchor-journey.config.ts</context>
+          <context context-type="linenumber">62</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="bb.ds-retail-anchor-journey-ang.email" datatype="html">
+        <source>Email address</source>
+        <target>Адрес электронной почты</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">apps/retail-onboarding/src/app/configs/ds-retail-anchor-journey.config.ts</context>
+          <context context-type="linenumber">72</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/ds-retail-anchor-journey-ang/src/constants/ds-retail-anchor-journey.constants.ts</context>
+          <context context-type="linenumber">51,50</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="bb.ds-retail-anchor-journey-ang.emailRequired" datatype="html">
+        <source>Email is required</source>
+        <target>Укажите адрес электронной почты</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">apps/retail-onboarding/src/app/configs/ds-retail-anchor-journey.config.ts</context>
+          <context context-type="linenumber">77</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="bb.ds-retail-anchor-journey-ang.emailInvalid" datatype="html">
+        <source>Email should be valid</source>
+        <target>Некорректный адрес электронной почты</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">apps/retail-onboarding/src/app/configs/ds-retail-anchor-journey.config.ts</context>
+          <context context-type="linenumber">78</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="bb.input-divided-date.monthPlaceholder" datatype="html">
+        <source>MM</source>
+        <target>MM</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/libs/ds-ui-components-ang/src/bb-input-divided-date-ui/input-divided-date.component.ts</context>
+          <context context-type="linenumber">21,22</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="bb.input-divided-date.dayPlaceholder" datatype="html">
+        <source>DD</source>
+        <target>ДД</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/libs/ds-ui-components-ang/src/bb-input-divided-date-ui/input-divided-date.component.ts</context>
+          <context context-type="linenumber">33,36</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="bb.input-divided-date.yearPlaceholder" datatype="html">
+        <source>YYYY</source>
+        <target>ГГГГ</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/libs/ds-ui-components-ang/src/bb-input-divided-date-ui/input-divided-date.component.ts</context>
+          <context context-type="linenumber">49,52</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="stepper.stateLabels.successful" datatype="html">
+        <source>Successful</source>
+        <target>Заполнено</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/libs/ds-ui-components-ang/src/bb-step-navigation-ui/step-navigation.models.ts</context>
+          <context context-type="linenumber">39</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="stepper.stateLabels.edit" datatype="html">
+        <source>Edit</source>
+        <target>Редактировать</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/libs/ds-ui-components-ang/src/bb-step-navigation-ui/step-navigation.models.ts</context>
+          <context context-type="linenumber">40</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="stepper.stateLabels.open" datatype="html">
+        <source>Open</source>
+        <target>Не заполнено</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/libs/ds-ui-components-ang/src/bb-step-navigation-ui/step-navigation.models.ts</context>
+          <context context-type="linenumber">41</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="bb.ds-retail-anchor-journey-ang.continueButton" datatype="html">
+        <source> Continue </source>
+        <target>Далее</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/ds-retail-anchor-journey-ang/src/ds-retail-anchor-journey-ang.component.html</context>
+          <context context-type="linenumber">1,3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="bb.ds-retail-anchor-journey-ang.backButton" datatype="html">
+        <source> Back </source>
+        <target>Назад</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/ds-retail-anchor-journey-ang/src/ds-retail-anchor-journey-ang.component.html</context>
+          <context context-type="linenumber">1,3</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

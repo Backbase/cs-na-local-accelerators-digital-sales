@@ -1,0 +1,10 @@
+apiVersion: v1
+name: retail-onboarding-app
+description: A Helm Chart for Flow Retail Onboarding Web App
+version: 0.0.3
+keywords:
+  - flow
+  - web-app
+maintainers:
+  - name: Digital Sales
+icon: https://start.backbase.com/favicon.png

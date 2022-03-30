@@ -1,0 +1,8 @@
+import { Environment } from './type';
+
+export const environment: Environment = {
+  production: true,
+  'co-applicant': false,
+  locale: 'ru-RU',
+  apiRoot: '${API_ROOT}',
+};

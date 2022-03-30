@@ -1,0 +1,22 @@
+{
+  "$schema": "../../node_modules/ng-packagr/package.schema.json",
+  "name": "@backbase/ds-retail-start-case-journey-ang",
+  "version": "0.0.1",
+  "description": "Digital Sales Retail Start Case Journey",
+  "peerDependencies": {
+    "@angular/common": "^11.2.0 || ^12.2.0",
+    "@angular/core": "^11.2.0 || ^12.2.0",
+    "@backbase/ui-ang": "^6.0.0",
+    "@backbase/case-manager-ang": "^1.0.0"
+  },
+  "publishConfig": {
+    "access": "public",
+    "directory": "../../dist/libs/ds-retail-start-case-journey-ang"
+  },
+  "ngPackage": {
+    "lib": {
+      "entryFile": "public_api.ts"
+    },
+    "dest": "../../dist/libs/ds-retail-start-case-journey-ang"
+  }
+}

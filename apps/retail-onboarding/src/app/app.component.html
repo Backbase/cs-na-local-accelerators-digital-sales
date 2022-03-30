@@ -1,0 +1,6 @@
+<bb-ds-layout-container-ang [interactionName]="interactionName" [steps]="steps" [currentStep$]="currentStep$">
+  <bb-ds-loading-journey-ang *ngIf="!display"></bb-ds-loading-journey-ang>
+  <ng-container *ngIf="display">
+    <router-outlet></router-outlet>
+  </ng-container>
+</bb-ds-layout-container-ang>

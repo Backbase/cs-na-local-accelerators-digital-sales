@@ -1,0 +1,395 @@
+Delivered-To: peterd@backbase.com
+Received: by 2002:a05:7110:8056:b029:4c:15bc:5fc4 with SMTP id e22csp195036geh;
+        Wed, 24 Mar 2021 03:56:59 -0700 (PDT)
+X-Google-Smtp-Source: ABdhPJyLTbQYFfcrQAenlP6hXSx15ZiMBa/SKp80LgOY8DBLw3gY5YZ+k21j1WC5jkAF4jUgxEx3
+X-Received: by 2002:a17:906:4e57:: with SMTP id g23mr2959739ejw.47.1616583418835;
+        Wed, 24 Mar 2021 03:56:58 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1616583418; cv=none;
+        d=google.com; s=arc-20160816;
+        b=p9WsSQaQjbw3SK2UowvRs+hSpfsVG8DKYk6ASvASAiXHUZN2z2epbQlc9KVLMuS7ja
+         yMqBniGQ5llaa3aXsUifGp4MZH+M3NnNVNTuYQVEycmYIk51GeJvXiNF42bkR97Dq+6n
+         8AOo9g516ZBy1u2qUShHfXMLXWj7DO6rmlO25zpWpOnS1zAnoIj0BEZso9pEaNNASV3y
+         XZMHgIeCajfWUAY3CVbnClQZvmO+PtNNA+Cz9kt+n6pXywN0f9en8dJ7nTkoagEtkSoS
+         3GPXAajBGotrXKK/RFEg2jI3zGCyo2/k3gPaq6F1NZnhmaWmb8sp+PR1bZPNcZPDp+E8
+         +lnQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:reply-to:subject:message-id:mime-version:from:date
+         :dkim-signature;
+        bh=Kbcsdy21DexFbYBaSlkA9lz/m7kfoeZNp598XIbmNPk=;
+        b=Iq/T9j1W5a81hQXqT5cRYRQBpedk5gms+afOReErG9TRg24K1Dm+dL2VyATscifD4n
+         FT/n9c36nYPMh4PATJ64TUyk0kioMUWEz20qEWLlPD5fOIDNYyhMPxd0uFcX4kzO7DIk
+         JjtflqLkb+4dv7+6HY7IPYonqNVXNVqXXQeAEGOgAGP5SMy5PqkAeQe0DJZnGn01YKJz
+         xdHDf9LADr79Sj3DO/YtzsBAVmmX3O4tf3jnfW0chWxhzh2IZHksLiB7o9ENWjhVE2K4
+         jgQsM0PFEYGLQqR60TXu9iFpg8KJhNWc6PJ27KjiKiivvDnsk3X/xGJPppKpjm4tyyjY
+         h5Ew==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@sendgrid.net header.s=smtpapi header.b="JFrG/c78";
+       spf=pass (google.com: domain of bounces+21067760-bf0f-peterd=backbase.com@sendgrid.net designates 167.89.12.138 as permitted sender) smtp.mailfrom="bounces+21067760-bf0f-peterd=backbase.com@sendgrid.net";
+       dmarc=fail (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=backbase.com
+Return-Path: <bounces+21067760-bf0f-peterd=backbase.com@sendgrid.net>
+Received: from xtrwhcvx.outbound-mail.sendgrid.net (xtrwhcvx.outbound-mail.sendgrid.net. [167.89.12.138])
+        by mx.google.com with ESMTPS id ji4si1584504ejc.235.2021.03.24.03.56.57
+        for <peterd@backbase.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Wed, 24 Mar 2021 03:56:58 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounces+21067760-bf0f-peterd=backbase.com@sendgrid.net designates 167.89.12.138 as permitted sender) client-ip=167.89.12.138;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@sendgrid.net header.s=smtpapi header.b="JFrG/c78";
+       spf=pass (google.com: domain of bounces+21067760-bf0f-peterd=backbase.com@sendgrid.net designates 167.89.12.138 as permitted sender) smtp.mailfrom="bounces+21067760-bf0f-peterd=backbase.com@sendgrid.net";
+       dmarc=fail (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=backbase.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.net;
+	h=content-type:from:mime-version:subject:reply-to:to;
+	s=smtpapi; bh=Kbcsdy21DexFbYBaSlkA9lz/m7kfoeZNp598XIbmNPk=;
+	b=JFrG/c78WzEXjQqgqaARqMllgNFdF3o0uhFNi8EE8NTT86ghEhPD/oGhK64nUwl+lSc7
+	stpolWO73Z0VJpCI8a/dB+t4tN8G3tQd6NtKowW/LlID9H+IYp7ASeS/AAsfXIvX6YXlIb
+	+fdSV/B3jYlKbiVfg2dFZQaQ1jef/2jyU=
+Received: by filterdrecv-p3iad2-7d7c446bd4-6v772 with SMTP id filterdrecv-p3iad2-7d7c446bd4-6v772-20-605B1AF8-10
+        2021-03-24 10:56:56.256289631 +0000 UTC m=+59042.665440652
+Received: from MjEwNjc3NjA (unknown)
+	by geopod-ismtpd-3-2 (SG) with HTTP
+	id kNKmmPvlSUCwM8BUtqbKpg
+	Wed, 24 Mar 2021 10:56:56.240 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=5d186c7dab7cee3405a556ed3783a1e5c2120a2c12a1c51c79f909e903d2
+Date: Wed, 24 Mar 2021 10:56:56 +0000 (UTC)
+From: peterd@backbase.com
+Mime-Version: 1.0
+Message-ID: <kNKmmPvlSUCwM8BUtqbKpg@geopod-ismtpd-3-2>
+Subject: Test - Initial test
+Reply-To: peterd@backbase.com
+X-SG-EID: 
+ =?us-ascii?Q?svZRI3E5p7nFscqZJfWErbbCKZOAiaeetiRkE6QOaG0rgp8ZVW93w0lcuT5mGo?=
+ =?us-ascii?Q?zFaWVlCV+fc4ryj5Hv7+OpeF0iYpMs22M8qtegx?=
+ =?us-ascii?Q?5+EB4y7HzYuvEZPsmYoKPiX5btXj6nllRxEtvnu?=
+ =?us-ascii?Q?6dCd01F2VxsqX3rCakbxvDDicwJU8WQ8r3VfxPw?=
+ =?us-ascii?Q?yOgY+z2ZSbC446ePmbeKopJyH3FWNiVU5=2FhTwh1?=
+ =?us-ascii?Q?MYXMvTR9bWLqnZo9A=3D?=
+X-SG-ID: 
+ =?us-ascii?Q?se=2F49CGmbS0sfR97ImeXvDoOrI1ra2UfBi=2FYp+tM4sZNnFcdeo8cVPRMz3vfJ1?=
+ =?us-ascii?Q?B4oqkAZFRNIQwdG8Mu1UvTWnDiePpKTD65P54np?=
+ =?us-ascii?Q?hfh5TS6mUbrxsLDE2ODXlmLR3wYN3ib2z8nB5Tm?=
+ =?us-ascii?Q?bZRJqeZzoIDSPQRB3w13iPoFq9OoceuwrxA6tZe?=
+ =?us-ascii?Q?R7LoTEvcLCUxMTW7L90ZNlrT6PmetQE+lFbNSfo?=
+ =?us-ascii?Q?9vP0Mwiqt9fKRr8kwbPhoVOcBPXCz2Flw0xrCdT?=
+ =?us-ascii?Q?G=2FM908qJMa+3o6LBIdNqVGcw9e+2Qz1nEBAyNyu?=
+ =?us-ascii?Q?R4eMqlv7i4uRdi5V=2FkkS0CJ5wZklvYzIbL4S9ox?=
+ =?us-ascii?Q?5zlhmsdVwaAs6G6vr=2F8rniaTVamE=3D?=
+To: peterd@backbase.com
+X-Entity-ID: gKVwiUKNq5bfvHxJd9gYeQ==
+
+--5d186c7dab7cee3405a556ed3783a1e5c2120a2c12a1c51c79f909e903d2
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=utf-8
+Mime-Version: 1.0
+
+You=E2=80=99re on your way to verify your mobile device. Please enter the v=
+erification code displayed below in your application.
+
+YOUR VERIFICATION CODE
+
+963543
+
+This verification code is valid for 3 minutes.
+
+Backbase
+Jacob Bontiusplaats 9, 1018 LL Amsterdam
+
+=C2=A9 Backbase
+
+Unsubscribe ( <%asm_group_unsubscribe_raw_url%> ) - Unsubscribe Preferences=
+ ( <%asm_preferences_raw_url%> )
+--5d186c7dab7cee3405a556ed3783a1e5c2120a2c12a1c51c79f909e903d2
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=utf-8
+Mime-Version: 1.0
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org=
+/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html data-editor-version=3D"2" class=3D"sg-campaigns" xmlns=3D"http://www.=
+w3.org/1999/xhtml">
+    <head>
+      <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf=
+-8">
+      <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scal=
+e=3D1, minimum-scale=3D1, maximum-scale=3D1">
+      <!--[if !mso]><!-->
+      <meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3DEdge">
+      <!--<![endif]-->
+      <!--[if (gte mso 9)|(IE)]>
+      <xml>
+        <o:OfficeDocumentSettings>
+          <o:AllowPNG/>
+          <o:PixelsPerInch>96</o:PixelsPerInch>
+        </o:OfficeDocumentSettings>
+      </xml>
+      <![endif]-->
+      <!--[if (gte mso 9)|(IE)]>
+  <style type=3D"text/css">
+    body {width: 600px;margin: 0 auto;}
+    table {border-collapse: collapse;}
+    table, td {mso-table-lspace: 0pt;mso-table-rspace: 0pt;}
+    img {-ms-interpolation-mode: bicubic;}
+  </style>
+<![endif]-->
+      <style type=3D"text/css">
+    body, p, div {
+      font-family: arial,helvetica,sans-serif;
+      font-size: 14px;
+    }
+    body {
+      color: #000000;
+    }
+    body a {
+      color: #1188E6;
+      text-decoration: none;
+    }
+    p { margin: 0; padding: 0; }
+    table.wrapper {
+      width:100% !important;
+      table-layout: fixed;
+      -webkit-font-smoothing: antialiased;
+      -webkit-text-size-adjust: 100%;
+      -moz-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+    }
+    img.max-width {
+      max-width: 100% !important;
+    }
+    .column.of-2 {
+      width: 50%;
+    }
+    .column.of-3 {
+      width: 33.333%;
+    }
+    .column.of-4 {
+      width: 25%;
+    }
+    ul ul ul ul  {
+      list-style-type: disc !important;
+    }
+    ol ol {
+      list-style-type: lower-roman !important;
+    }
+    ol ol ol {
+      list-style-type: lower-latin !important;
+    }
+    ol ol ol ol {
+      list-style-type: decimal !important;
+    }
+    @media screen and (max-width:480px) {
+      .preheader .rightColumnContent,
+      .footer .rightColumnContent {
+        text-align: left !important;
+      }
+      .preheader .rightColumnContent div,
+      .preheader .rightColumnContent span,
+      .footer .rightColumnContent div,
+      .footer .rightColumnContent span {
+        text-align: left !important;
+      }
+      .preheader .rightColumnContent,
+      .preheader .leftColumnContent {
+        font-size: 80% !important;
+        padding: 5px 0;
+      }
+      table.wrapper-mobile {
+        width: 100% !important;
+        table-layout: fixed;
+      }
+      img.max-width {
+        height: auto !important;
+        max-width: 100% !important;
+      }
+      a.bulletproof-button {
+        display: block !important;
+        width: auto !important;
+        font-size: 80%;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+      }
+      .columns {
+        width: 100% !important;
+      }
+      .column {
+        display: block !important;
+        width: 100% !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+      }
+      .social-icon-column {
+        display: inline-block !important;
+      }
+    }
+  </style>
+      <!--user entered Head Start--><!--End Head user entered-->
+    </head>
+    <body>
+      <center class=3D"wrapper" data-link-color=3D"#1188E6" data-body-style=
+=3D"font-size:14px; font-family:arial,helvetica,sans-serif; color:#000000; =
+background-color:#FFFFFF;">
+        <div class=3D"webkit">
+          <table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"=
+100%" class=3D"wrapper" bgcolor=3D"#FFFFFF">
+            <tr>
+              <td valign=3D"top" bgcolor=3D"#FFFFFF" width=3D"100%">
+                <table width=3D"100%" role=3D"content-container" class=3D"o=
+uter" align=3D"center" cellpadding=3D"0" cellspacing=3D"0" border=3D"0">
+                  <tr>
+                    <td width=3D"100%">
+                      <table width=3D"100%" cellpadding=3D"0" cellspacing=
+=3D"0" border=3D"0">
+                        <tr>
+                          <td>
+                            <!--[if mso]>
+    <center>
+    <table><tr><td width=3D"600">
+  <![endif]-->
+                                    <table width=3D"100%" cellpadding=3D"0"=
+ cellspacing=3D"0" border=3D"0" style=3D"width:100%; max-width:600px;" alig=
+n=3D"center">
+                                      <tr>
+                                        <td role=3D"modules-container" styl=
+e=3D"padding:0px 0px 0px 0px; color:#000000; text-align:left;" bgcolor=3D"#=
+FFFFFF" width=3D"100%" align=3D"left"><table class=3D"module preheader preh=
+eader-hide" role=3D"module" data-type=3D"preheader" border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"display: none !important;=
+ mso-hide: all; visibility: hidden; opacity: 0; color: transparent; height:=
+ 0; width: 0;">
+    <tr>
+      <td role=3D"module-content">
+        <p></p>
+      </td>
+    </tr>
+  </table><table class=3D"wrapper" role=3D"module" data-type=3D"image" bord=
+er=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"table-=
+layout: fixed;" data-muid=3D"8fd674b5-0f43-42a1-b6b5-5b15a94fd8aa">
+    <tbody>
+      <tr>
+        <td style=3D"font-size:6px; line-height:10px; padding:0px 0px 32px =
+0px;" valign=3D"top" align=3D"left">
+          <img class=3D"max-width" border=3D"0" style=3D"display:block; col=
+or:#000000; text-decoration:none; font-family:Helvetica, arial, sans-serif;=
+ font-size:16px; max-width:45% !important; width:45%; height:auto !importan=
+t;" width=3D"270" alt=3D"" data-proportionally-constrained=3D"true" data-re=
+sponsive=3D"true" src=3D"http://cdn.mcauto-images-production.sendgrid.net/b=
+75c4c9daeafa0d8/2728be17-7cfb-4d07-a55a-39abef1954e1/1868x156.png">
+        </td>
+      </tr>
+    </tbody>
+  </table><table class=3D"wrapper" role=3D"module" data-type=3D"image" bord=
+er=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"table-=
+layout: fixed;" data-muid=3D"3399e75b-6c87-45c4-a6c2-936543bba23d">
+    <tbody>
+      <tr>
+        <td style=3D"font-size:6px; line-height:10px; padding:0px 0px 0px 0=
+px;" valign=3D"top" align=3D"center">
+          <img class=3D"max-width" border=3D"0" style=3D"display:block; col=
+or:#000000; text-decoration:none; font-family:Helvetica, arial, sans-serif;=
+ font-size:16px; max-width:100% !important; width:100%; height:auto !import=
+ant;" width=3D"600" alt=3D"" data-proportionally-constrained=3D"true" data-=
+responsive=3D"true" src=3D"http://cdn.mcauto-images-production.sendgrid.net=
+/b75c4c9daeafa0d8/a49789d8-cfc0-4df5-af44-ee938d1fd7fc/1192x490.png">
+        </td>
+      </tr>
+    </tbody>
+  </table><table class=3D"module" role=3D"module" data-type=3D"text" border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"table-la=
+yout: fixed;" data-muid=3D"eab745c7-34a1-4eab-8cac-9464e00d8656" data-mc-mo=
+dule-version=3D"2019-10-22">
+    <tbody>
+      <tr>
+        <td style=3D"padding:18px 0px 18px 0px; line-height:22px; text-alig=
+n:inherit;" height=3D"100%" valign=3D"top" bgcolor=3D"" role=3D"module-cont=
+ent"><div><div style=3D"font-family: inherit; text-align: inherit">You=E2=
+=80=99re on your way to verify your mobile device. Please enter the verific=
+ation code displayed below in your application.</div><div></div></div></td>
+      </tr>
+    </tbody>
+  </table><table class=3D"module" role=3D"module" data-type=3D"text" border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"table-la=
+yout: fixed;" data-muid=3D"01ae18fc-2576-43b1-9ecc-6f1c00d99a88" data-mc-mo=
+dule-version=3D"2019-10-22">
+    <tbody>
+      <tr>
+        <td style=3D"padding:18px 0px 18px 0px; line-height:22px; text-alig=
+n:inherit; background-color:#f5f6f7;" height=3D"100%" valign=3D"top" bgcolo=
+r=3D"#f5f6f7" role=3D"module-content"><div><div style=3D"font-family: inher=
+it; text-align: center">YOUR VERIFICATION CODE</div>
+<div style=3D"font-family: inherit; text-align: center"><br></div>
+<div style=3D"font-family: inherit; text-align: center"><span style=3D"font=
+-size: 48px; color: #238acf">963543</span></div><div></div></div></td>
+      </tr>
+    </tbody>
+  </table><table class=3D"module" role=3D"module" data-type=3D"text" border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"table-la=
+yout: fixed;" data-muid=3D"2ae9b4ce-0dfc-4135-b81f-ca12d85ceb3b" data-mc-mo=
+dule-version=3D"2019-10-22">
+    <tbody>
+      <tr>
+        <td style=3D"padding:18px 0px 18px 0px; line-height:22px; text-alig=
+n:inherit;" height=3D"100%" valign=3D"top" bgcolor=3D"" role=3D"module-cont=
+ent"><div><div style=3D"font-family: inherit; text-align: inherit">This ver=
+ification code is valid for 3 minutes.</div><div></div></div></td>
+      </tr>
+    </tbody>
+  </table><table class=3D"module" role=3D"module" data-type=3D"text" border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"table-la=
+yout: fixed;" data-muid=3D"d827bc05-c618-4528-8387-4882e544205c" data-mc-mo=
+dule-version=3D"2019-10-22">
+    <tbody>
+      <tr>
+        <td style=3D"padding:18px 0px 18px 0px; line-height:22px; text-alig=
+n:inherit;" height=3D"100%" valign=3D"top" bgcolor=3D"" role=3D"module-cont=
+ent"><div><div style=3D"font-family: inherit; text-align: center"><span sty=
+le=3D"color: #bababa">Backbase<br>
+Jacob Bontiusplaats 9, 1018 LL Amsterdam</span></div>
+<div style=3D"font-family: inherit; text-align: center"><br></div>
+<div style=3D"font-family: inherit; text-align: center"><span style=3D"colo=
+r: #bababa">=C2=A9 Backbase</span></div><div></div></div></td>
+      </tr>
+    </tbody>
+  </table><div data-role=3D"module-unsubscribe" class=3D"module" role=3D"mo=
+dule" data-type=3D"unsubscribe" style=3D"color:#444444; font-size:12px; lin=
+e-height:20px; padding:16px 16px 16px 16px; text-align:Center;" data-muid=
+=3D"4e838cf3-9892-4a6d-94d6-170e474d21e5"><div class=3D"Unsubscribe--addres=
+sLine"></div><p style=3D"font-size:12px; line-height:20px;"><a target=3D"_b=
+lank" class=3D"Unsubscribe--unsubscribeLink zzzzzzz" href=3D"<%asm_group_un=
+subscribe_raw_url%>" style=3D"">Unsubscribe</a> - <a href=3D"<%asm_preferen=
+ces_raw_url%>" target=3D"_blank" class=3D"Unsubscribe--unsubscribePreferenc=
+es" style=3D"">Unsubscribe Preferences</a></p></div></td>
+                                      </tr>
+                                    </table>
+                                    <!--[if mso]>
+                                  </td>
+                                </tr>
+                              </table>
+                            </center>
+                            <![endif]-->
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </center>
+    <img src=3D"https://u21067760.ct.sendgrid.net/wf/open?upn=3DTofDY-2BxGH=
+N-2FxjrVOgNy9pGCWWMvY-2F1h-2FtnIRLs1l4Tk63LR6cG6Fy5WcHeGf4vy0Zs6lC8W5Va8mX3=
+FADITFY4-2BO66u2waf-2B6RBgk-2BsF2i-2Fo-2FR6JZbIUE9EQn-2B6a8Rv70Mtw9lR07kSwX=
+7j3fipSKFuxaYBRtAWU8Yd4nDOZB7Iz-2FoKGIdQRoPR0x4EDL1kagK5LKDnD0FmurObWcxhABm=
+TxgqxIwNm0aIEoZT0ojbRtjcBvB81JzqHGgvtIVeAb6lXaEQv5p2SW-2FNr-2FrBjmN-2Bq-2FI=
+8g8Ijb-2FKnQCZQyDE9NdssgG6Jh6OdnPx0MgK5xhJjSMGif-2B5SJsvCxpp63ui9F0-2B-2B5D=
+IWCEfnP8L4Jq3EbCYrij3taJkbdIeBrLsxGtjOouqiVlKE8ks37hVJ-2B24Q-2FNq5VSD46acb2=
+nat7eiHBGYER6-2BtyC3pvbrOmAuSur3OS1cZzYXRy74rq9Y-2FFlinlWm2CkVpOEKk-2BnwlTl=
+ip2U0ihOmuCyi1tIQfwbeCqugRrUsLfAQaPM80PjPkR3DQQwR4YkRyu7cBu5-2Bn1MtNM-3D" a=
+lt=3D"" width=3D"1" height=3D"1" border=3D"0" style=3D"height:1px !importan=
+t;width:1px !important;border-width:0 !important;margin-top:0 !important;ma=
+rgin-bottom:0 !important;margin-right:0 !important;margin-left:0 !important=
+;padding-top:0 !important;padding-bottom:0 !important;padding-right:0 !impo=
+rtant;padding-left:0 !important;"/></body>
+  </html>
+--5d186c7dab7cee3405a556ed3783a1e5c2120a2c12a1c51c79f909e903d2--

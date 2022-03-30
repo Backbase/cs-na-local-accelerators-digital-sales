@@ -1,0 +1,31 @@
+global:
+  chartName: retail-onboarding-cm-app
+  app:
+    metadata:
+      tier: flow
+      capability: us-onboarding
+    image:
+      tag: 1.0.0
+
+retailonboardingcmwebapp:
+  enabled: true
+  app:
+    name: retailonboardingcmwebapp
+    image:
+      repository: retail-onboarding-case-manager
+    resources:
+      memory:
+        ram: 128
+      cpu:
+        minShares: 50
+        maxShares: 100
+  env:
+    PORT: "8080"
+    PATHNAME: /retail-onboarding-case-manager/
+    AUTH_REALM: backbase
+    AUTH_SCOPE: openid
+    AUTH_CLIENT_ID: bb-web-client
+    AUTH_LANDING_PAGE: dashboard
+    AUTH_REDIRECT_PAGE: login
+  service:
+    enabled: true

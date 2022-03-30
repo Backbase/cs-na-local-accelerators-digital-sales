@@ -1,0 +1,26 @@
+global:
+  chartName: retail-onboarding-app
+  app:
+    metadata:
+      tier: flow
+      capability: us-onboarding
+    image:
+      tag: 1.0.0
+
+retailonboardingwebapp:
+  enabled: true
+  app:
+    name: retailonboardingwebapp
+    image:
+      repository: retail-onboarding
+    resources:
+      memory:
+        ram: 128
+      cpu:
+        minShares: 50
+        maxShares: 100
+  env:
+    PORT: "8080"
+    PATHNAME: /retail-onboarding/
+  service:
+    enabled: true

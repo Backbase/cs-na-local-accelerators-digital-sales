@@ -1,0 +1,468 @@
+{
+  "$schema": "node_modules/@angular/cli/lib/config/schema.json",
+  "cli": {
+    "analytics": false
+  },
+  "version": 1,
+  "newProjectRoot": "",
+  "projects": {
+    "retail-onboarding": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "inlineStyle": true,
+          "skipTests": true,
+          "style": "sass"
+        },
+        "@schematics/angular:class": {
+          "skipTests": true
+        },
+        "@schematics/angular:directive": {
+          "skipTests": true
+        },
+        "@schematics/angular:guard": {
+          "skipTests": true
+        },
+        "@schematics/angular:interceptor": {
+          "skipTests": true
+        },
+        "@schematics/angular:module": {},
+        "@schematics/angular:pipe": {
+          "skipTests": true
+        },
+        "@schematics/angular:service": {
+          "skipTests": true
+        }
+      },
+      "root": "apps/retail-onboarding",
+      "sourceRoot": "apps/retail-onboarding/src",
+      "prefix": "bb",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/retail-onboarding",
+            "index": "apps/retail-onboarding/src/index.html",
+            "main": "apps/retail-onboarding/src/main.ts",
+            "polyfills": "apps/retail-onboarding/src/polyfills.ts",
+            "tsConfig": "apps/retail-onboarding/tsconfig.app.json",
+            "assets": [
+              "apps/retail-onboarding/src/favicon.ico",
+              "apps/retail-onboarding/src/assets"
+            ],
+            "styles": [
+              "node_modules/@backbase/backbase-theme/scss/main.scss",
+              "node_modules/@backbase/backbase-theme-retail-preset/scss/main.scss"
+            ],
+            "scripts": [],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
+          },
+          "configurations": {
+            "production-co-applicant": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/retail-onboarding/src/environments/environment.ts",
+                  "with": "apps/retail-onboarding/src/environments/environment-co-applicant.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "9mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ],
+              "outputPath": "dist/retail-onboarding-welcome",
+              "baseHref": "/retail-onboarding-welcome/",
+              "deployUrl": "/retail-onboarding-welcome/"
+            },
+            "co-applicant": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/retail-onboarding/src/environments/environment.ts",
+                  "with": "apps/retail-onboarding/src/environments/environment-co-applicant.ts"
+                }
+              ],
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            },
+            "production-ru": {
+              "localize": [
+                "ru-RU"
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "apps/retail-onboarding/src/environments/environment.ts",
+                  "with": "apps/retail-onboarding/src/environments/environment-ru.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "9mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            },
+            "ru": {
+              "localize": [
+                "ru-RU"
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "apps/retail-onboarding/src/environments/environment.ts",
+                  "with": "apps/retail-onboarding/src/environments/environment-ru.ts"
+                }
+              ],
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            },
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/retail-onboarding/src/environments/environment.ts",
+                  "with": "apps/retail-onboarding/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "9mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ],
+              "baseHref": "/retail-onboarding/",
+              "deployUrl": "/retail-onboarding/"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "retail-onboarding:build",
+            "proxyConfig": "apps/retail-onboarding/proxy.conf.js"
+          },
+          "configurations": {
+            "production-co-applicant": {
+              "browserTarget": "retail-onboarding:build:production-co-applicant"
+            },
+            "co-applicant": {
+              "browserTarget": "retail-onboarding:build:co-applicant"
+            },
+            "production-ru": {
+              "browserTarget": "retail-onboarding:build:production-ru"
+            },
+            "ru": {
+              "browserTarget": "retail-onboarding:build:ru"
+            },
+            "production": {
+              "browserTarget": "retail-onboarding:build:production"
+            },
+            "development": {
+              "browserTarget": "retail-onboarding:build:development"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "retail-onboarding:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "apps/retail-onboarding/src/test.ts",
+            "karmaConfig": "./karma.conf.js",
+            "polyfills": "apps/retail-onboarding/src/polyfills.ts",
+            "tsConfig": "apps/retail-onboarding/tsconfig.spec.json",
+            "codeCoverage": true,
+            "codeCoverageExclude": [
+              "test.ts",
+              "**/polyfills.ts"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "eslintConfig": ".eslintrc.json",
+            "lintFilePatterns": ["**/*.spec.ts", "**/*.ts"]
+          }
+        }
+      },
+      "i18n": {
+        "sourceLocale": "en-US",
+        "locales": {
+          "ru-RU": "locales/messages.ru-RU.xlf"
+        }
+      }
+    },
+    "retail-onboarding-case-manager": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        },
+        "@schematics/angular:application": {
+          "strict": true
+        }
+      },
+      "root": "apps/retail-onboarding-case-manager",
+      "sourceRoot": "apps/retail-onboarding-case-manager/src",
+      "prefix": "bb",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/retail-onboarding-case-manager",
+            "index": "apps/retail-onboarding-case-manager/src/index.html",
+            "main": "apps/retail-onboarding-case-manager/src/main.ts",
+            "polyfills": "apps/retail-onboarding-case-manager/src/polyfills.ts",
+            "tsConfig": "apps/retail-onboarding-case-manager/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "apps/retail-onboarding-case-manager/src/favicon.ico",
+              "apps/retail-onboarding-case-manager/src/assets"
+            ],
+            "styles": [
+              "node_modules/dmn-js/dist/assets/diagram-js.css",
+              "node_modules/dmn-js/dist/assets/dmn-js-shared.css",
+              "node_modules/dmn-js/dist/assets/dmn-js-drd.css",
+              "node_modules/dmn-js/dist/assets/dmn-js-decision-table.css",
+              "node_modules/dmn-js/dist/assets/dmn-js-decision-table-controls.css",
+              "node_modules/dmn-js/dist/assets/dmn-js-literal-expression.css",
+              "node_modules/dmn-js/dist/assets/dmn-font/css/dmn.css",
+              "node_modules/@backbase/backbase-theme/scss/main.scss",
+              "node_modules/@backbase/backbase-theme-retail-preset/scss/main.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "9mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "apps/retail-onboarding-case-manager/src/environments/environment.ts",
+                  "with": "apps/retail-onboarding-case-manager/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all",
+              "baseHref": "/retail-onboarding-case-manager/",
+              "deployUrl": "/retail-onboarding-case-manager/"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "retail-onboarding-case-manager:build",
+            "proxyConfig": "apps/retail-onboarding-case-manager/proxy.conf.js"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "retail-onboarding-case-manager:build:production"
+            },
+            "development": {
+              "browserTarget": "retail-onboarding-case-manager:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "retail-onboarding-case-manager:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "apps/retail-onboarding-case-manager/src/test.ts",
+            "polyfills": "apps/retail-onboarding-case-manager/src/polyfills.ts",
+            "tsConfig": "apps/retail-onboarding-case-manager/tsconfig.spec.json",
+            "karmaConfig": "./karma.conf.js",
+            "codeCoverage": true,
+            "codeCoverageExclude": [
+              "test.ts",
+              "**/polyfills.ts"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "eslintConfig": ".eslintrc.json",
+            "lintFilePatterns": ["**/*.spec.ts", "**/*.ts"]
+          }
+        }
+      }
+    },
+    "ono-credentials-journey-ang": {
+      "root": "libs/ono-credentials-journey-ang",
+      "sourceRoot": "libs/ono-credentials-journey-ang/src",
+      "projectType": "library",
+      "prefix": "bb",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "libs/ono-credentials-journey-ang/package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/ono-credentials-journey-ang/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "libs/ono-credentials-journey-ang/test.ts",
+            "karmaConfig": "./karma.conf.js",
+            "polyfills": "libs/ono-credentials-journey-ang/polyfills.ts",
+            "tsConfig": "libs/ono-credentials-journey-ang/tsconfig.spec.json",
+            "codeCoverage": true,
+            "codeCoverageExclude": [
+              "test.ts",
+              "**/polyfills.ts"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/ono-credentials-journey-ang/**/*.ts",
+              "libs/ono-credentials-journey-ang/**/*.html"
+            ]
+          }
+        }
+      }
+    },
+    "ds-retail-start-case-journey-ang": {
+      "projectType": "library",
+      "root": "libs/ds-retail-start-case-journey-ang",
+      "sourceRoot": "libs/ds-retail-start-case-journey-ang/src",
+      "prefix": "bb",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "libs/ds-retail-start-case-journey-ang/package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/ds-retail-start-case-journey-ang/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "libs/ds-retail-start-case-journey-ang/test.ts",
+            "karmaConfig": "./karma.conf.js",
+            "polyfills": "libs/ds-retail-start-case-journey-ang/polyfills.ts",
+            "tsConfig": "libs/ds-retail-start-case-journey-ang/tsconfig.spec.json",
+            "codeCoverage": true,
+            "codeCoverageExclude": [
+              "test.ts",
+              "**/polyfills.ts"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/ds-retail-start-case-journey-ang/**/*.ts",
+              "libs/ds-retail-start-case-journey-ang/**/*.html"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "retail-onboarding"
+}
