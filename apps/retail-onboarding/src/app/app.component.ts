@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { FlowInteractionService } from '@backbase/flow-interaction-sdk-ang/core';
+import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
 import { dsLayoutContainerConfig } from './configs/ds-layout-container.config';
 import { flowInteractionCoreConfig } from './configs/flow-interaction-core.config';
 import { environment } from '../environments/environment';
 import { Step } from '@backbase/ds-shared-ang/ui';
+import { TagManagerService } from 'libs/analytics/tag-manager.service';
 
 const findStepName = (steps: Step[], path: string): string =>
   steps.map((step: Step) => findName(step, path)).find((foundName) => foundName) || '';
@@ -25,8 +27,25 @@ export class AppComponent implements OnInit {
   display: boolean = !this.isProduction || this.isWelcome || false;
   currentStep$ = new BehaviorSubject((!this.isProduction && this.stepName) || dsLayoutContainerConfig.initialStep);
 
-  constructor(private flowInteractionService: FlowInteractionService) {
+  constructor(
+    private flowInteractionService: FlowInteractionService,
+    private readonly _router: Router,
+    private readonly _route: ActivatedRoute,
+    private readonly _tagManagerService: TagManagerService,
+  ) {
+
     this.flowInteractionService.init(this.serviceConfig, this.interactionName);
+
+    this._router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        const rawURL = event.urlAfterRedirects;
+        const queryParams = this._route.snapshot.queryParams;
+        const route = rawURL.split(/[/?]/)[1];
+
+        /* Send pageview event */
+        this._tagManagerService.triggerPageView(route, queryParams);
+      }
+    });
   }
   ngOnInit(): void {
     this.flowInteractionService.nav.currentStep$.subscribe((s) => {
@@ -36,5 +55,7 @@ export class AppComponent implements OnInit {
         this.display = true;
       }
     });
+
+    this._tagManagerService.initGTM();
   }
 }
