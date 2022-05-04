@@ -13,6 +13,7 @@ import { AppComponent } from './app.component';
 import { defaultRoutes, coApplicantRoutes } from './app.routes';
 import { flowInteractionCoreConfig } from './configs/flow-interaction-core.config';
 import { environment } from '../environments/environment';
+import { AnalyticsModule } from 'libs/analytics/analytics.module';
 
 const routes: Routes = environment['co-applicant'] ? coApplicantRoutes : defaultRoutes;
 
@@ -24,6 +25,7 @@ const routes: Routes = environment['co-applicant'] ? coApplicantRoutes : default
     FlowInteractionCoreModule.forRoot(flowInteractionCoreConfig.moduleConfig),
     BrowserModule,
     RouterModule.forRoot(routes),
+    AnalyticsModule,
   ],
   bootstrap: [AppComponent],
 })
