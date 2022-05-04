@@ -1,7 +1,7 @@
 import { Inject, Injectable } from '@angular/core';
 import { Params, ActivatedRoute } from '@angular/router';
 import { WindowToken } from './window.provider';
-import { EnvironmentVariables, EnvironmentVariableService } from './environment-variable.service';
+import { EnvironmentVariables, EnvironmentVariableService, ProjectEnvironment } from './environment-variable.service';
 
 type GTMEvent = { [key: string]: any };
 interface GTMWindow extends Window {
@@ -84,7 +84,9 @@ export class TagManagerService {
   private async emitEvent(gtmEvent: GTMEvent) {
     const dataLayer = (<any>this.window).dataLayer;
     if (this.isDataLayerAvailable()) {
-      console.log(gtmEvent)
+      if (this._env.getEnvironmentVariables()?.environment !== ProjectEnvironment.PROD) {
+        console.log(gtmEvent)
+      }
       dataLayer.push(gtmEvent);
     }
   }
