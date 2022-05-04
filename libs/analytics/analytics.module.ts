@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { WindowToken, windowProvider } from './window.provider';
 
 
 
@@ -7,6 +8,9 @@ import { CommonModule } from '@angular/common';
   declarations: [],
   imports: [
     CommonModule
+  ],
+  providers: [
+    { provide: WindowToken, useFactory: windowProvider },
   ]
 })
 export class AnalyticsModule { }
