@@ -113,4 +113,20 @@ export class TagManagerService {
     }
     this.emitEvent(gtmEvent);
   }
+
+  /**
+   * @name triggerInactivityEvent
+   * @description
+   * Triggers Google Tag Manager custom event "inactivityCustomEvent".
+   *
+   */
+   triggerInactivityEvent() {
+
+    const gtmEvent: GTMEvent = {
+      event: 'inactivityCustomEvent',
+      gaEventCategory: 'Inactivity',
+      gaEventValue: 'User has been inactive for 3 seconds'
+    };
+    this.emitEvent(gtmEvent);
+  }
 }

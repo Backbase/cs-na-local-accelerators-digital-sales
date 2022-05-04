@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { FlowInteractionService } from '@backbase/flow-interaction-sdk-ang/core';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
@@ -7,6 +7,7 @@ import { flowInteractionCoreConfig } from './configs/flow-interaction-core.confi
 import { environment } from '../environments/environment';
 import { Step } from '@backbase/ds-shared-ang/ui';
 import { TagManagerService } from 'libs/analytics/tag-manager.service';
+import { UserInactivityService } from 'libs/analytics/user-inactivity.service';
 
 const findStepName = (steps: Step[], path: string): string =>
   steps.map((step: Step) => findName(step, path)).find((foundName) => foundName) || '';
@@ -27,11 +28,20 @@ export class AppComponent implements OnInit {
   display: boolean = !this.isProduction || this.isWelcome || false;
   currentStep$ = new BehaviorSubject((!this.isProduction && this.stepName) || dsLayoutContainerConfig.initialStep);
 
+  @HostListener('window:keydown')
+  @HostListener('window:mousedown')
+  @HostListener('window:mousemove')
+  checkUserActivity() {
+    clearTimeout(this._userInactivityService.timeoutId);
+    this._userInactivityService.checkTimeOut();
+  }
+
   constructor(
     private flowInteractionService: FlowInteractionService,
     private readonly _router: Router,
     private readonly _route: ActivatedRoute,
     private readonly _tagManagerService: TagManagerService,
+    private readonly _userInactivityService: UserInactivityService,
   ) {
 
     this.flowInteractionService.init(this.serviceConfig, this.interactionName);

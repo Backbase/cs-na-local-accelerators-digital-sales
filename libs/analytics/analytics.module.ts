@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { WindowToken, windowProvider } from './window.provider';
+import { TagManagerService } from './tag-manager.service';
+import { UserInactivityService } from './user-inactivity.service';
 
 
 
@@ -11,6 +13,8 @@ import { WindowToken, windowProvider } from './window.provider';
   ],
   providers: [
     { provide: WindowToken, useFactory: windowProvider },
+    TagManagerService,
+    UserInactivityService,
   ]
 })
 export class AnalyticsModule { }
